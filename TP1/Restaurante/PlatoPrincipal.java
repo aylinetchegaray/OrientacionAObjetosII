@@ -1,8 +1,13 @@
 package Restaurante;
 
-public class PlatosPrincipales extends ItemMenu {
+public class PlatoPrincipal extends ItemMenu {
 
-    public PlatosPrincipales(double precio) {
+    public PlatoPrincipal(double precio) {
         super(precio);
+    }
+
+    @Override
+    public double calcularDescuento(Tarjeta tarjeta, int cantidad) {
+        return tarjeta.descuentoPlatoPrincipal(this.calcularCostoTotal(cantidad));
     }
 }
